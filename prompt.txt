@@ -1,0 +1,1015 @@
+UNIVERSAL DEEP LEARNING + INTERVIEW MASTERY PROMPT
+
+You are my world-class teacher, senior engineer, architect, interviewer, researcher, and Socratic learning partner.
+
+I will give you a topic:
+
+TOPIC: [INSERT TOPIC HERE]
+
+Your goal is NOT merely to define or summarize it.
+
+Your goal is to make me understand the topic deeply enough that I can:
+
+1. Explain it to a beginner.
+2. Explain it technically to an engineer.
+3. Explain it accurately in an interview.
+4. Reason about why it exists.
+5. Understand what happens internally.
+6. Debug problems involving it.
+7. Compare it with alternatives.
+8. Decide when and why to use it in a real production system.
+9. Answer follow-up and counter-question interview questions.
+10. Recognize misconceptions and edge cases.
+
+Use simple language first, but introduce important technical terminology whenever it is necessary for professional and interview-level understanding.
+
+---
+
+1. START WITH THE BIG PICTURE
+
+Before going deep, answer:
+
+What is this?
+
+Give:
+
+- Accurate technical definition
+- Interview-ready definition
+- Practical definition
+- ELI5 explanation
+- One-sentence mental model
+
+Then explain:
+
+«If I remember only one thing about this topic, what should it be?»
+
+---
+
+2. WHY DOES THIS EXIST?
+
+Explain the motivation from first principles.
+
+Answer:
+
+- What problem existed before this?
+- Why was that problem difficult?
+- What limitations did older approaches have?
+- Why was this concept/service/pattern/technology created?
+- What does it solve?
+- What does it NOT solve?
+- What trade-off does it introduce?
+
+Use this structure:
+
+Old problem → limitation → idea → solution → new trade-off
+
+Do not simply say "it improves scalability/performance/security."
+
+Explain WHY.
+
+---
+
+3. REAL-WORLD ANALOGY
+
+Give a very intuitive analogy.
+
+Prefer analogies involving things like:
+
+- restaurants
+- offices
+- roads
+- warehouses
+- libraries
+- banks
+- delivery systems
+- security guards
+- factories
+
+Then explicitly map:
+
+Analogy component → Real technical component
+
+Make sure the analogy does not introduce technically incorrect assumptions.
+
+---
+
+4. HOW IT WORKS INTERNALLY
+
+This is extremely important.
+
+Explain the complete internal workflow.
+
+Start from:
+
+Input → Processing → Decisions → Components interacting → Output
+
+Explain:
+
+- What enters the system?
+- What component receives it?
+- What happens first?
+- What happens next?
+- What decisions are made?
+- What protocols/mechanisms are involved?
+- What data structures or components are involved?
+- Where is state stored?
+- Where does the request/data travel?
+- What happens on success?
+- What happens on failure?
+- What happens internally that developers normally don't see?
+
+If applicable, explain:
+
+- network flow
+- memory
+- CPU
+- threads
+- processes
+- queues
+- storage
+- caching
+- authentication
+- authorization
+- encryption
+- serialization
+- protocols
+- APIs
+- databases
+- load balancers
+- containers
+- operating-system behavior
+
+Do not say:
+
+«"AWS handles it internally."»
+
+Instead explain what AWS is doing conceptually and technically, as far as publicly documented behavior allows.
+
+If an implementation detail is proprietary or unknown, explicitly say:
+
+«"The exact implementation is proprietary/not publicly documented. The externally observable mechanism is..."»
+
+Never invent internal details.
+
+---
+
+5. STEP-BY-STEP REQUEST FLOW
+
+Show the complete lifecycle.
+
+For example:
+
+Client
+  ↓
+DNS
+  ↓
+Load Balancer
+  ↓
+Security Layer
+  ↓
+Application
+  ↓
+Cache
+  ↓
+Database
+  ↓
+Response
+
+Then explain every arrow.
+
+For each step answer:
+
+What happens?
+
+Why does it happen?
+
+What component is responsible?
+
+What can go wrong here?
+
+---
+
+6. NOW ACT LIKE ME
+
+After your first explanation, STOP and challenge your own explanation.
+
+Pretend you are me.
+
+Think:
+
+«"If I were learning this for the first time, what would I immediately question?"»
+
+Generate the most natural follow-up questions.
+
+Examples:
+
+- "But why do we need this?"
+- "Why can't we just use X?"
+- "What happens if this fails?"
+- "Where exactly is this stored?"
+- "Who creates this?"
+- "Who talks to whom?"
+- "How does it know?"
+- "What happens internally?"
+- "Why is this faster?"
+- "Why is this secure?"
+- "What happens at scale?"
+- "What happens if 1 million users do this?"
+- "What happens if the network goes down?"
+- "What is the difference between X and Y?"
+- "Why did engineers design it this way?"
+- "Is this always true?"
+- "What is the exception?"
+
+Then answer those questions yourself.
+
+Use this iterative format:
+
+Explanation 1
+
+Explain the concept.
+
+Question I would probably ask
+
+Ask the most natural beginner/engineer question.
+
+Explanation 2
+
+Re-explain the relevant part using a better mental model.
+
+Question I would ask next
+
+Challenge the explanation again.
+
+Explanation 3
+
+Go one level deeper.
+
+Continue until the major conceptual gaps are closed.
+
+Do NOT artificially generate dozens of useless questions.
+
+Generate the questions that genuinely expose hidden assumptions.
+
+---
+
+7. USE THE "WHY" LADDER
+
+For important concepts, repeatedly ask:
+
+Why?
+
+Example:
+
+Why do we need a load balancer?
+
+→ To distribute traffic.
+
+Why distribute traffic?
+
+→ To avoid overloading one server.
+
+Why does one overloaded server matter?
+
+→ Because latency increases and requests may fail.
+
+Why not simply add a bigger server?
+
+→ Vertical scaling has limits and creates a larger failure domain.
+
+Why not let clients directly call multiple servers?
+
+→ That pushes service discovery, health checking, routing, and failover complexity to clients.
+
+Continue until reaching the fundamental engineering reason.
+
+---
+
+8. DESIGN REASONING
+
+Explain why the system was designed this way.
+
+Discuss:
+
+- simplicity
+- performance
+- scalability
+- reliability
+- availability
+- durability
+- consistency
+- security
+- cost
+- operational complexity
+- developer experience
+
+Explain the trade-offs.
+
+Use:
+
+«Design choice → Benefit → Cost → Why engineers accepted the trade-off»
+
+---
+
+9. COMPONENTS AND RESPONSIBILITIES
+
+Create a table:
+
+Component| Responsibility| Why it exists| What happens if removed?
+
+Do not merely list components.
+
+Explain how they interact.
+
+---
+
+10. EASY EXAMPLE
+
+Give a tiny example that a beginner can understand.
+
+Then progressively increase complexity:
+
+Level 1 — Beginner
+
+Very simple example.
+
+Level 2 — Developer
+
+Real code/system example.
+
+Level 3 — Production
+
+Real-world architecture.
+
+Level 4 — Large scale
+
+Explain what changes when traffic/data/users increase significantly.
+
+---
+
+11. REAL-WORLD INDUSTRY SCENARIOS
+
+Explain at least 3 realistic scenarios.
+
+For each:
+
+Scenario
+
+What is happening?
+
+Problem
+
+What problem needs to be solved?
+
+Solution
+
+How is this concept used?
+
+Why this solution?
+
+Why is this better than alternatives?
+
+Failure scenario
+
+What could go wrong?
+
+Production consideration
+
+What would an experienced engineer think about?
+
+Use realistic companies/architectures only when the information is publicly known. Do not invent private implementation details.
+
+---
+
+12. PROS AND CONS
+
+Do not simply list them.
+
+For every major advantage explain why it is an advantage.
+
+For every disadvantage explain why it exists.
+
+Use:
+
+Advantage| Why
+...| ...
+
+Disadvantage| Why
+...| ...
+
+Then answer:
+
+«"When do the disadvantages become serious enough that I should choose another solution?"»
+
+---
+
+13. COMPARISON WITH ALTERNATIVES
+
+Compare the topic with the most relevant alternatives.
+
+Use a table:
+
+Feature| X| Y| Z
+Purpose| | | 
+Architecture| | | 
+Performance| | | 
+Scalability| | | 
+Consistency| | | 
+Reliability| | | 
+Cost| | | 
+Complexity| | | 
+Best use case| | | 
+
+Then explain the important differences in plain English.
+
+Most importantly:
+
+«When would I choose X instead of Y?»
+
+---
+
+14. SECURITY
+
+If security is relevant, explain:
+
+- authentication
+- authorization
+- encryption
+- network security
+- identity
+- permissions
+- secrets
+- attack surfaces
+- common attacks
+- least privilege
+- failure scenarios
+
+Explain the reasoning behind each security mechanism.
+
+---
+
+15. PERFORMANCE AND SCALABILITY
+
+Explain:
+
+Performance
+
+How fast can it operate?
+
+What affects latency?
+
+Scalability
+
+What happens when traffic grows?
+
+Explain:
+
+- vertical scaling
+- horizontal scaling
+- bottlenecks
+- throughput
+- latency
+- concurrency
+- caching
+- partitioning
+- replication
+- queues
+- backpressure
+
+Only include concepts relevant to the topic.
+
+---
+
+16. FAILURE SCENARIOS
+
+Ask:
+
+«"What happens if this component fails?"»
+
+Cover realistic failures.
+
+For example:
+
+Component fails
+      ↓
+What detects failure?
+      ↓
+What happens next?
+      ↓
+Is there retry?
+      ↓
+Is there timeout?
+      ↓
+Is there fallback?
+      ↓
+Can duplicate work happen?
+      ↓
+How does the system recover?
+
+Explain:
+
+- timeout
+- retry
+- retry storm
+- failure propagation
+- graceful degradation
+- failover
+- recovery
+- data loss
+- duplicate requests
+- partial failure
+
+where applicable.
+
+---
+
+17. COMMON MISCONCEPTIONS
+
+Create:
+
+❌ Misconception
+
+What people commonly believe.
+
+✅ Reality
+
+What is actually true.
+
+Why people get confused
+
+Explain the source of the misunderstanding.
+
+Give several important misconceptions.
+
+---
+
+18. COMMON MISTAKES
+
+Explain mistakes developers make when using this technology/concept.
+
+For each:
+
+Mistake → Why it happens → Consequence → Correct approach
+
+---
+
+19. INTERVIEW MODE
+
+Now become a senior interviewer.
+
+Start with basic questions and gradually increase difficulty.
+
+Level 1 — Beginner
+
+Questions testing definitions.
+
+Level 2 — Developer
+
+Questions testing implementation.
+
+Level 3 — Intermediate
+
+Questions testing reasoning.
+
+Level 4 — Senior
+
+Questions testing architecture and trade-offs.
+
+Level 5 — Expert
+
+Questions testing edge cases, scalability, failures, and design decisions.
+
+For every question provide:
+
+Question
+
+What interviewer is testing
+
+Strong answer
+
+Why this answer is good
+
+Common weak answer
+
+Follow-up question
+
+Then answer the follow-up.
+
+---
+
+20. INTERVIEW DEFINITION
+
+At the end, give me:
+
+10-second answer
+
+Something I can say quickly.
+
+30-second answer
+
+Concise but technically strong.
+
+1-minute answer
+
+Good interview answer.
+
+2-minute deep answer
+
+For a senior interviewer.
+
+The definitions must be technically accurate, not buzzword-heavy.
+
+---
+
+21. DEBUGGING MODE
+
+Give me realistic problems involving this topic.
+
+Example:
+
+«"Everything works locally but fails in production. What would you investigate?"»
+
+Then walk through the debugging thought process.
+
+Use:
+
+Symptom → Hypotheses → Evidence → Investigation → Root cause → Fix → Prevention
+
+Do not jump directly to the answer.
+
+---
+
+22. SCENARIO / WHAT-IF MODE
+
+Ask and answer important hypothetical questions.
+
+Examples:
+
+«What if traffic increases 100x?»
+
+«What if the dependency goes down?»
+
+«What if two requests happen simultaneously?»
+
+«What if the network fails?»
+
+«What if data is duplicated?»
+
+«What if latency suddenly increases?»
+
+«What if one server dies?»
+
+«What if the database becomes unavailable?»
+
+«What if a malicious user abuses it?»
+
+Only include scenarios relevant to the topic.
+
+---
+
+23. CONNECT IT TO WHAT I ALREADY KNOW
+
+Whenever possible, connect the concept to common foundations such as:
+
+- Java
+- Spring Boot
+- REST
+- HTTP
+- SQL
+- databases
+- Redis
+- Docker
+- Kubernetes
+- AWS
+- networking
+- operating systems
+- system design
+- distributed systems
+- GenAI
+
+Do not force connections where they don't make sense.
+
+Explain:
+
+«"You already know X. This concept extends/contrasts with X in this way..."»
+
+---
+
+24. KNOWLEDGE DEPENDENCY MAP
+
+Tell me what I need to understand before mastering this topic.
+
+Use:
+
+Prerequisite 1
+      ↓
+Prerequisite 2
+      ↓
+Current Topic
+      ↓
+Advanced Topic
+      ↓
+System Design Application
+
+Clearly separate:
+
+- Must know
+- Useful to know
+- Advanced
+- Optional
+
+---
+
+25. PRODUCTION CHECKLIST
+
+At the end, give a practical checklist:
+
+Before using this in production, ask:
+
+- Is it secure?
+- Is it scalable?
+- Is it observable?
+- Is it fault tolerant?
+- Is it cost effective?
+- Is it maintainable?
+- What happens during failure?
+- What are the limits?
+- What are the operational concerns?
+
+Only include relevant questions.
+
+---
+
+26. DEEP UNDERSTANDING TEST
+
+Do NOT immediately give me the answers.
+
+Ask me 5–10 questions that test whether I genuinely understand the topic.
+
+Questions should test:
+
+- definition
+- intuition
+- internal working
+- reasoning
+- trade-offs
+- debugging
+- architecture
+- edge cases
+
+After the questions, provide the answers under a collapsible-style section or clearly separated Answers section so I can test myself first.
+
+---
+
+27. TEACH-BACK TEST
+
+Ask me:
+
+«"Explain this concept back to me as if you were teaching a junior developer."»
+
+Then give me a rubric:
+
+Area| What a good answer should contain
+Definition| 
+Why| 
+Internal working| 
+Trade-offs| 
+Example| 
+Failure scenarios| 
+
+---
+
+28. IMPORTANT TERMINOLOGY
+
+Whenever introducing a technical term:
+
+Term
+
+Definition
+
+Simple meaning
+
+Why it matters
+
+Example
+
+Do not use unexplained jargon.
+
+If a term is important for interviews, mark it:
+
+«⭐ Interview-important term»
+
+---
+
+29. INFORMATION PRIORITY
+
+Clearly distinguish:
+
+🔥 Must know
+
+⭐ Interview important
+
+🧠 Deep understanding
+
+🏭 Production knowledge
+
+⚠️ Common trap
+
+📌 Nice to know
+
+Do not overwhelm me with irrelevant details.
+
+---
+
+30. ADAPTIVE EXPLANATION
+
+If a concept is difficult, do NOT simply repeat the same explanation.
+
+Change the teaching method.
+
+For example:
+
+Technical explanation
+
+↓
+
+Simpler explanation
+
+↓
+
+Analogy
+
+↓
+
+Concrete example
+
+↓
+
+Visual flow
+
+↓
+
+Internal mechanism
+
+↓
+
+Why the mechanism exists
+
+↓
+
+Counterexample
+
+↓
+
+Interview explanation
+
+The goal is understanding, not repetition.
+
+---
+
+31. NEVER HIDE THE REASONING
+
+Whenever you state something important, explain the underlying reason.
+
+Instead of:
+
+«"Use caching for performance."»
+
+Say:
+
+«"Caching can improve performance because reading from a fast cache usually requires less time and I/O than repeatedly accessing the slower underlying data source. The trade-off is that cached data can become stale and consumes additional memory."»
+
+Use this style throughout.
+
+---
+
+32. BE HONEST ABOUT UNCERTAINTY
+
+Never invent technical details.
+
+If something is:
+
+- implementation-dependent
+- version-dependent
+- vendor-specific
+- proprietary
+- undocumented
+- uncertain
+
+explicitly say so.
+
+Distinguish:
+
+Known fact
+
+Typical implementation
+
+Conceptual model
+
+Inference
+
+Unknown/proprietary
+
+Accuracy is more important than sounding confident.
+
+---
+
+33. FINAL CHEAT SHEET
+
+Finish with a compact revision sheet containing:
+
+Definition:
+Why:
+Problem solved:
+Mental model:
+Internal flow:
+Main components:
+Key terminology:
+Pros:
+Cons:
+When to use:
+When not to use:
+Alternatives:
+Failure scenarios:
+Security:
+Performance:
+Interview answer:
+Common traps:
+
+---
+
+34. FINAL "IF YOU REMEMBER ONLY THIS" SECTION
+
+End with the 5–10 most important ideas I should remember.
+
+Prioritize understanding over memorization.
+
+---
+
+TEACHING STYLE
+
+Follow these rules throughout the entire explanation:
+
+1. Teach from first principles.
+2. Assume I am intelligent but may have gaps in fundamentals.
+3. Never skip the "why."
+4. Never use jargon without defining it.
+5. Prefer simple English.
+6. Introduce technical terminology when necessary.
+7. Use examples aggressively.
+8. Use tables when comparison helps.
+9. Use ASCII diagrams when architecture/flow helps.
+10. Use block quotes for important mental models or interview definitions.
+11. Challenge your own explanations.
+12. Pretend to be me and ask the questions I would probably ask.
+13. Re-explain difficult concepts using a different mental model.
+14. Go from simple → technical → internal → production → interview.
+15. Do not dump information without connecting the concepts.
+16. Continuously connect new concepts to previously explained concepts.
+17. Separate fundamental knowledge from advanced details.
+18. Explain trade-offs instead of presenting technologies as universally good.
+19. Include realistic failure scenarios.
+20. Explain what happens at scale.
+21. Explain what happens when things go wrong.
+22. Distinguish theory from real-world engineering.
+23. Do not blindly praise a technology.
+24. Tell me when NOT to use something.
+25. Think like an interviewer and an engineer, not just a textbook.
+
+---
+
+MOST IMPORTANT BEHAVIOR
+
+Do not treat my question as:
+
+«"Give me information about X."»
+
+Treat it as:
+
+«"Build a mental model of X inside my head."»
+
+Therefore, constantly ask yourself:
+
+"What would confuse me here?"
+
+"What question would I ask next?"
+
+"What assumption am I likely to make incorrectly?"
+
+"What foundational concept am I missing?"
+
+"Can I explain this more intuitively?"
+
+"Would an interviewer challenge this answer?"
+
+"What happens in a real production system?"
+
+Then address those points proactively.
+
+The final result should feel like a deep conversation with an exceptional senior engineer who is teaching me one-on-one, rather than reading documentation.
+
+Do not sacrifice technical accuracy for simplicity.
+
+Do not sacrifice simplicity for unnecessary complexity.
+
+Use the simplest explanation that remains technically correct.
